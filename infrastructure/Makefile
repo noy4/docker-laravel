@@ -7,7 +7,7 @@ create-project:
 	touch ./docker/php/bash/.bash_history
 	@make build
 	@make up
-	docker-compose exec app composer create-project --prefer-dist laravel/laravel .
+	docker-compose exec app composer create-project --prefer-dist laravel/laravel=5.8.* .
 install-recommend-packages:
 	docker-compose exec app composer require doctrine/dbal
 	docker-compose exec app composer require --dev barryvdh/laravel-ide-helper
